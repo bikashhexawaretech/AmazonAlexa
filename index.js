@@ -11,6 +11,28 @@ app.listen(portC, function(){
     console.log('AGENT is running my app on  PORT: ' + portC);
 });
 
+function buildResponse(title, output, repromptText, shouldEndSessionValue) {
+    
+	return {
+		outputSpeech: {
+			type: 'PlainText',
+			text: output
+		},
+		card: {
+			type: 'Simple',
+			title: title,
+			content: output
+		},
+		reprompt: {
+			outputSpeech: {
+				type: 'PlainText',
+				text: repromptText
+			}
+        },
+        shouldEndSession: shouldEndSessionValue
+	};
+}
+
 function Greetings(intent, session, callback) {
     const sessionAttributes = {},
         cardTitle = 'Hey There',
