@@ -129,7 +129,7 @@ function callIntent(req, session, callback){
     if(req.intent.name === 'ContactType'){
          
         Description(req.intent.name, session, callback);
-        EndSession(req.intent.name, session, callback);
+        
     }  
     else {
         throw new Error('Invalid intent');
