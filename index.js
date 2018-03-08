@@ -17,8 +17,8 @@ var card = {
     title: 'Category',
     text: 'Category',
     image: {
-        "smallImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkXhsNb7pJLhUvi9aDY7v0IzHYu08KrhV8y4VsPehK--oRm70f",
-        "largeImageUrl": "/https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkXhsNb7pJLhUvi9aDY7v0IzHYu08KrhV8y4VsPehK--oRm70f"
+        "smallImageUrl": "https://insyncworkplacesolutions.com.au/wp-content/uploads/2013/04/microscope-2.jpg",
+        "largeImageUrl": "https://insyncworkplacesolutions.com.au/wp-content/uploads/2013/04/microscope-2.jpg"
     }
 };
  
