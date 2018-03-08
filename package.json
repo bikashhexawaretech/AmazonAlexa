@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/bikashhexawaretech/AmazonAlexa/issues"
   },
-  "homepage": "https://github.com/bikashhexawaretech/AmazonAlexa#readme"
+  "homepage": "https://github.com/bikashhexawaretech/AmazonAlexa#readme",
+  "dependencies": {
+    "alexa-app": "^4.2.1",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2"
+  }
 }
