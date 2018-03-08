@@ -36,8 +36,8 @@ function buildResponse(title, output, repromptText, shouldEndSessionValue) {
 function Greetings(intent, session, callback) {
     const sessionAttributes = {},
         cardTitle = 'Hey There',
-        speechOutput = 'Hey There.I am alexa bot!!!',
-        repromptText = 'Hey There.I am alexa bot!!!',
+        speechOutput = 'Hey There I am alexa bot!!!',
+        repromptText = 'Hey There I am alexa bot!!!',
         shouldEndSession = true;
     callback(sessionAttributes, buildResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
 }
