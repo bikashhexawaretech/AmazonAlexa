@@ -11,6 +11,19 @@ app.listen(portC, function(){
     console.log('AGENT is running my app on  PORT: ' + portC);
 });
 
+
+var card = {
+    type: 'Standard',
+    title: 'Category',
+    text: 'Category',
+    image: {
+        "smallImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkXhsNb7pJLhUvi9aDY7v0IzHYu08KrhV8y4VsPehK--oRm70f",
+        "largeImageUrl": "/https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkXhsNb7pJLhUvi9aDY7v0IzHYu08KrhV8y4VsPehK--oRm70f"
+    }
+};
+ 
+ 
+
 function buildResponse(title, output, repromptText, shouldEndSessionValue) {
     
 	return {
@@ -33,6 +46,24 @@ function buildResponse(title, output, repromptText, shouldEndSessionValue) {
 	};
 }
 
+function buildResponseCard(card,title, output, repromptText, shouldEndSessionValue){
+    return {
+		outputSpeech: {
+			type: 'PlainText',
+			text: output
+		},
+		card:card,
+		reprompt: {
+			outputSpeech: {
+				type: 'PlainText',
+				text: repromptText
+			}
+        },
+        shouldEndSession: shouldEndSessionValue
+	};
+
+}
+
 function Greetings(intent, session, callback) {
     const sessionAttributes = {},
         cardTitle = 'Hey There',
@@ -48,7 +79,7 @@ function Category(intent, session, callback) {
         speechOutput = 'Please enter Category',
         repromptText = 'Please enter Category',
         shouldEndSession = true;
-    callback(sessionAttributes, buildResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
+    callback(sessionAttributes, buildResponseCard(card,cardTitle, speechOutput, repromptText, shouldEndSession));
 }
 
 function callIntent(req, session, callback){
