@@ -101,7 +101,14 @@ function Description(intent, session, callback) {
         shouldEndSession = false;
     callback(sessionAttributes, buildResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
 }
-
+function EndSession(intent, session, callback) {
+    const sessionAttributes = {},
+        cardTitle = 'Description',
+        speechOutput = 'Incident created successfully',
+        repromptText = 'Incident created successfully',
+        shouldEndSession = true;
+    callback(sessionAttributes, buildResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
+}
 function callIntent(req, session, callback){
     console.log(req.intent.name);
 	if(req.intent.name === 'Greeting'){
@@ -122,8 +129,11 @@ function callIntent(req, session, callback){
     if(req.intent.name === 'ContactType'){
          
         Description(req.intent.name, session, callback);
+        EndSession(req.intent.name, session, callback);
     }  
-     
+    else {
+        throw new Error('Invalid intent');
+    }
 }
  
 function sendResponse(res, attributes, response){
