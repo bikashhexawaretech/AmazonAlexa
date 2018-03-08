@@ -38,7 +38,7 @@ function Greetings(intent, session, callback) {
         cardTitle = 'Hey There',
         speechOutput = 'Hey There I am servicenow assistant.I can help you with create an incident and get the status of an incident',
         repromptText = 'Hey There I am servicenow assistant.I can help you with create an incident and get the status of an incident',
-        shouldEndSession = true;
+        shouldEndSession = false;
     callback(sessionAttributes, buildResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
 }
 
