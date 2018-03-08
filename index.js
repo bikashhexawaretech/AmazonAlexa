@@ -103,14 +103,25 @@ function Description(intent, session, callback) {
 }
 
 function callIntent(req, session, callback){
+    console.log(req.intent.name);
 	if(req.intent.name === 'Greeting'){
-        console.log('Greeting Intent Called');
+      
         Greetings(req.intent.name, session, callback);
     }
     else
     if(req.intent.name === 'CreateIncident'){
          
         Category(req.intent.name, session, callback);
+    }  
+    else
+    if(req.intent.name === 'ContactType'){
+         
+        ContactType(req.intent.name, session, callback);
+    }  
+    else
+    if(req.intent.name === 'Description'){
+         
+        Description(req.intent.name, session, callback);
     }    
 }
  
