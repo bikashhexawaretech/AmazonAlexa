@@ -23,7 +23,7 @@ function Greetings(intent, session, callback) {
 function callIntent(req, session, callback){
 	if(req.intent.name === 'Greeting'){
         console.log('Greeting Intent Called');
-        Greetings(intent, session, callback);
+        Greetings(req.intent.name, session, callback);
     }  
 }
 
