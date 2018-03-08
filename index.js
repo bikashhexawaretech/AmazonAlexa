@@ -57,7 +57,7 @@ function callIntent(req, session, callback){
         Greetings(req.intent.name, session, callback);
     }
     else
-    if(req.intent.name === 'Greeting'){
+    if(req.intent.name === 'CreateIncident'){
          
         Category(req.intent.name, session, callback);
     }    
