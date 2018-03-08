@@ -14,10 +14,12 @@ app.listen(portC, function(){
 
 
 app.post('/', (req, res) => {
-	 
+    
+    /*
     if (req.body.session.new) {
         console.log('Inside');
     }
+    */
     
     console.log(req.body.request.type);
      
