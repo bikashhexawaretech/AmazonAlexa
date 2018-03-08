@@ -57,7 +57,7 @@ function sendResponse(res, attributes, response){
 	});
 }
 
-app.post('/', (req, res) => {
+app.post('/', function (req, res)   {
     
     /*
     if (req.body.session.new) {
@@ -68,7 +68,7 @@ app.post('/', (req, res) => {
     console.log(req.body.request.type);
     if (req.body.request.type === 'IntentRequest') {
         callIntent(req.body.request,req.body.session,
-            (attributes, response) => {
+            function (attributes, response)   {
                 sendResponse(res, attributes, response);
             });
         }
