@@ -1,0 +1,19 @@
+{
+  "name": "amazonalexa",
+  "version": "1.0.0",
+  "description": "AmazonAlexa",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bikashhexawaretech/AmazonAlexa.git"
+  },
+  "author": "Bikash Panigrahi",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/bikashhexawaretech/AmazonAlexa/issues"
+  },
+  "homepage": "https://github.com/bikashhexawaretech/AmazonAlexa#readme"
+}
