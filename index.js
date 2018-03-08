@@ -42,13 +42,27 @@ function Greetings(intent, session, callback) {
     callback(sessionAttributes, buildResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
 }
 
+function Category(intent, session, callback) {
+    const sessionAttributes = {},
+        cardTitle = 'Category',
+        speechOutput = 'Please enter Category',
+        repromptText = 'Please enter Category',
+        shouldEndSession = true;
+    callback(sessionAttributes, buildResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
+}
+
 function callIntent(req, session, callback){
 	if(req.intent.name === 'Greeting'){
         console.log('Greeting Intent Called');
         Greetings(req.intent.name, session, callback);
-    }  
+    }
+    else
+    if(req.intent.name === 'Greeting'){
+         
+        Category(req.intent.name, session, callback);
+    }    
 }
-
+ 
 function sendResponse(res, attributes, response){
 	return res.json({
 		version: '1.0',
@@ -65,13 +79,16 @@ app.post('/', function (req, res)   {
     }
     */
     
-    console.log(req.body.request.type);
+    
     if (req.body.request.type === 'IntentRequest') {
         callIntent(req.body.request,req.body.session,
             function (attributes, response)   {
                 sendResponse(res, attributes, response);
             });
         }
+
+         
+
         else if (req.body.request.type === 'SessionEndedRequest') {
             console.log("session end");
         }
