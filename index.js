@@ -76,10 +76,30 @@ function Greetings(intent, session, callback) {
 function Category(intent, session, callback) {
     const sessionAttributes = {},
         cardTitle = 'Category',
-        speechOutput = 'Please enter Category',
-        repromptText = 'Please enter Category',
-        shouldEndSession = true;
+        speechOutput = 'Please enter Category like Hardware,Software or Network',
+        repromptText = 'Please enter Category like Hardware,Software or Network',
+        shouldEndSession = false;
     callback(sessionAttributes, buildResponseCard(card,cardTitle, speechOutput, repromptText, shouldEndSession));
+}
+
+
+
+function ContactType(intent, session, callback) {
+    const sessionAttributes = {},
+        cardTitle = 'Contact Type',
+        speechOutput = 'Please enter contact type like Phone or Email',
+        repromptText = 'Please enter contact type like Phone or Email',
+        shouldEndSession = false;
+    callback(sessionAttributes, buildResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
+}
+
+function Description(intent, session, callback) {
+    const sessionAttributes = {},
+        cardTitle = 'Description',
+        speechOutput = 'Please enter description',
+        repromptText = 'Please enter description',
+        shouldEndSession = false;
+    callback(sessionAttributes, buildResponse(cardTitle, speechOutput, repromptText, shouldEndSession));
 }
 
 function callIntent(req, session, callback){
