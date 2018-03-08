@@ -114,15 +114,16 @@ function callIntent(req, session, callback){
         Category(req.intent.name, session, callback);
     }  
     else
-    if(req.intent.name === 'ContactType'){
+    if(req.intent.name === 'Category'){
          
         ContactType(req.intent.name, session, callback);
     }  
     else
-    if(req.intent.name === 'Description'){
+    if(req.intent.name === 'ContactType'){
          
         Description(req.intent.name, session, callback);
-    }    
+    }  
+     
 }
  
 function sendResponse(res, attributes, response){
